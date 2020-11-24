@@ -3,15 +3,18 @@ const express = require('express');
 // Crear servidor express
 const app = express();
 
+// Acceso al directorio publico
+app.use(express.static('public'));
+
 // Rutas 
-app.get('/', (req, res) => {
-    console.log('Se recibió una petición en /');
-    res.json({
-        ok: true,
-        msg: "Recibido",
-    });
-}
-);
+// app.get('/', (req, res) => {
+//     console.log('Se recibió una petición en /');
+//     res.json({
+//         ok: true,
+//         msg: "Recibido",
+//     });
+// }
+// );
 
 // Configuracion del puerto 
 app.listen(4000, () => {
