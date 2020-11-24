@@ -4,21 +4,14 @@ require('dotenv').config();
 // Crear servidor express
 const app = express();
 
-console.log(process.env);
+// console.log(process.env);
 
 
 // Acceso al directorio publico
 app.use(express.static('public'));
 
 // Rutas 
-// app.get('/', (req, res) => {
-//     console.log('Se recibió una petición en /');
-//     res.json({
-//         ok: true,
-//         msg: "Recibido",
-//     });
-// }
-// );
+app.use('/api/auth', require('./routes/auth'));
 
 // Configuracion del puerto 
 app.listen(process.env.PORT, () => {
